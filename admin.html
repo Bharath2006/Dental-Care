@@ -136,6 +136,7 @@
         .admin-header h1 {
             background: var(--gradient-1);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             font-size: 32px;
             font-weight: 800;
@@ -177,6 +178,7 @@
             font-weight: 800;
             background: var(--gradient-1);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -354,6 +356,7 @@
             font-weight: 700;
             background: var(--gradient-1);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -666,21 +669,70 @@
             display: none;
         }
 
+        @media (max-width: 992px) {
+            .admin-container {
+                margin-top: 180px;
+            }
+
+            .appointments-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
         @media (max-width: 768px) {
             .admin-header {
                 flex-direction: column;
                 gap: 15px;
-                padding: 15px;
+                padding: 15px 10px;
+                text-align: center;
+            }
+
+            .admin-header h1 {
+                font-size: 24px;
+                justify-content: center;
+            }
+
+            .admin-header h1 img {
+                width: 40px !important;
+                height: 40px !important;
             }
 
             .stats-container {
                 width: 100%;
-                justify-content: center;
-                flex-wrap: wrap;
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                padding-bottom: 5px;
+                gap: 10px;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .stats-container::-webkit-scrollbar {
+                height: 4px;
+            }
+
+            .stats-container::-webkit-scrollbar-thumb {
+                background: var(--gradient-1);
+                border-radius: 10px;
+            }
+
+            .stat-card {
+                min-width: 100px;
+                padding: 10px 15px;
+            }
+
+            .stat-value {
+                font-size: 24px;
+            }
+
+            .admin-container {
+                margin-top: 220px;
+                padding: 0 10px;
             }
 
             .controls {
-                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
             }
 
             .search-box {
@@ -688,15 +740,48 @@
             }
 
             .filter-group {
+                width: 100%;
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 10px;
+                flex-wrap: nowrap;
+            }
+
+            .filter-btn {
+                white-space: nowrap;
+                padding: 10px 20px;
+            }
+
+            .export-btn {
+                width: 100%;
                 justify-content: center;
             }
 
             .appointments-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .appointment-card {
+                padding: 20px;
+            }
+
+            .patient-name {
+                font-size: 18px;
             }
 
             .card-actions {
                 flex-direction: column;
+            }
+
+            .login-box {
+                padding: 30px 20px;
+                margin: 0 15px;
+            }
+
+            .login-box img {
+                width: 100px;
+                height: 100px;
             }
         }
 
